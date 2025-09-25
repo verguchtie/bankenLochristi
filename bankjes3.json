@@ -1,0 +1,126 @@
+{
+  "id": "my_benches_theme",
+  "title": {
+    "en": "My Benches Theme",
+    "nl": "Mijn banken thema"
+  },
+  "description": {
+    "en": "A custom theme based on benches with the same questions",
+    "nl": "Een aangepast thema gebaseerd op zitbanken met dezelfde vragen"
+  },
+  "icon": "circle",
+  "startLat": 51.05,
+  "startLon": 3.72,
+  "startZoom": 15,
+
+  "layers": [
+    {
+      "id": "my_benches_layer",
+      "title": {
+        "en": "My benches layer",
+        "nl": "Mijn banken-laag"
+      },
+      "description": {
+        "en": "A copy of benches layer with the same questions",
+        "nl": "Een kopie van de benches-laag met dezelfde vragen"
+      },
+      "source": {
+        "osmTags": "amenity=bench"
+      },
+      "minzoom": 15,
+
+      "presets": [
+        {
+          "title": {
+            "en": "Bench",
+            "nl": "Bank"
+          },
+          "tags": [
+            "amenity=bench"
+          ]
+        }
+      ],
+
+      "tagRenderings": [
+        {
+          "id": "backrest",
+          "question": {
+            "en": "Does the bench have a backrest?",
+            "nl": "Heeft de bank een leuning?"
+          },
+          "mappings": [
+            {
+              "if": "backrest=yes",
+              "then": {
+                "en": "With backrest",
+                "nl": "Met leuning"
+              }
+            },
+            {
+              "if": "backrest=no",
+              "then": {
+                "en": "Without backrest",
+                "nl": "Zonder leuning"
+              }
+            }
+          ],
+          "render": "{backrest}"
+        },
+        {
+          "id": "material",
+          "question": {
+            "en": "What is the bench made of?",
+            "nl": "Waarvan is de bank gemaakt?"
+          },
+          "freeform": {
+            "key": "material"
+          },
+          "render": "Material: {material}"
+        },
+        {
+          "id": "seats",
+          "question": {
+            "en": "How many people can sit on the bench?",
+            "nl": "Met hoeveel personen kan men op de bank zitten?"
+          },
+          "freeform": {
+            "key": "seats"
+          },
+          "render": "Seats: {seats}"
+        },
+        {
+          "id": "condition",
+          "question": {
+            "en": "What is the condition of the bench?",
+            "nl": "Wat is de staat van de bank?"
+          },
+          "mappings": [
+            {
+              "if": "condition=good",
+              "then": {
+                "en": "Good",
+                "nl": "Goed"
+              }
+            },
+            {
+              "if": "condition=bad",
+              "then": {
+                "en": "Bad",
+                "nl": "Slecht"
+              }
+            }
+          ],
+          "render": "Condition: {condition}"
+        }
+      ],
+
+      "mapRendering": [
+        {
+          "icon": "circle",
+          "color": "#0066ff",
+          "iconSize": "medium"
+        }
+      ]
+    }
+  ]
+}
