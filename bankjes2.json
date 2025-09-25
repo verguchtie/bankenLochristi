@@ -52,18 +52,19 @@
             {
               "if": "backrest=yes",
               "then": {
-                "en": "Yes, with backrest",
-                "nl": "Ja, met leuning"
+                "en": "With backrest",
+                "nl": "Met leuning"
               }
             },
             {
               "if": "backrest=no",
               "then": {
-                "en": "No, without backrest",
-                "nl": "Nee, zonder leuning"
+                "en": "Without backrest",
+                "nl": "Zonder leuning"
               }
             }
-          ]
+          ],
+          "render": "{backrest}"
         },
         {
           "id": "material",
@@ -73,7 +74,8 @@
           },
           "freeform": {
             "key": "material"
-          }
+          },
+          "render": "Material: {material}"
         },
         {
           "id": "seats",
@@ -83,7 +85,8 @@
           },
           "freeform": {
             "key": "seats"
-          }
+          },
+          "render": "Seats: {seats}"
         },
         {
           "id": "condition",
@@ -106,7 +109,8 @@
                 "nl": "Slecht"
               }
             }
-          ]
+          ],
+          "render": "Condition: {condition}"
         }
       ],
 
